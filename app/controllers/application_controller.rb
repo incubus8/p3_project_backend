@@ -14,6 +14,10 @@ class ApplicationController < Sinatra::Base
     200
   end
 
+  get '/' do
+    pet_posts = PetPost.all
+    pet_posts.to_json
+  end
   # method "URL" do
     
   # end
