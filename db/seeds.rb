@@ -18,7 +18,7 @@ end
     
     PetPost.create(user_id: user.id,
                     description: "Cute!",
-                    img_url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bhg.com%2Fpets%2Fdogs%2Fdog-names%2Fcute-dog-names%2F&psig=AOvVaw0yDSKru2Zzz6Y9-TxT5Jiu&ust=1626206322905000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCPDqkuSo3vECFQAAAAAdAAAAABAE",
+                    img_url: "http://cdn.akc.org/content/article-body-image/keeshond_dog_pictures.jpg",
                     likes: likes
                     )
 end

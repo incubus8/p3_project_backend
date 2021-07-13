@@ -15,8 +15,10 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    pet_posts = PetPost.all
-    pet_posts.to_json
+    # pet_posts = PetPost.all
+    # {message: PetPost.all}.to_json
+      PetPost.all.to_json
+    # {message: "hello world"}.to_json
   end
   # method "URL" do
     
