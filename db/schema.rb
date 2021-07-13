@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2021_07_12_234451) do
     t.integer "user_id"
     t.string "img_url"
     t.string "description"
+    t.string "name"
+    t.string "breed"
   end
 
   create_table "users", force: :cascade do |t|

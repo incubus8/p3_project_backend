@@ -10,34 +10,43 @@ puts "Seeding users..."
 end
 
 
+puts "Seeding pet posts..."
 
 10.times do
     user = User.all.sample
     likes = rand(1..1000)
-    # img_url = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bhg.com%2Fpets%2Fdogs%2Fdog-names%2Fcute-dog-names%2F&psig=AOvVaw0yDSKru2Zzz6Y9-TxT5Jiu&ust=1626206322905000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCPDqkuSo3vECFQAAAAAdAAAAABAE"
+    breed = Faker::Creature::Dog.breed
+    name = Faker::Creature::Dog.name
+    description = Faker::Creature::Dog.unique.meme_phrase
     
     PetPost.create(user_id: user.id,
-                    description: "Cute!",
+                    description: description,
                     img_url: "http://cdn.akc.org/content/article-body-image/keeshond_dog_pictures.jpg",
-                    likes: likes
+                    likes: likes,
+                    breed: breed,
+                    name: name
                     )
 end
-puts "Seeding pet posts..."
 
+puts "Seeding comments..."
 
 10.times do
         user = User.all.sample
         pet_post = PetPost.all.sample
         content = 'I wanna squish those cheeks!'
-    
+            
         Comment.create(content: content,
                         user_id: user.id,
                         pet_post_id: pet_post.id,
+                        
     
+                        
         )
     end
 
-    puts "Seeding comments..."
     
 
     puts "Seeded!"
+
+
+    # add breed, name to petpost in seed, rollback schema, migrate new schema, hardcode 5 petposts with pics
