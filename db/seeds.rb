@@ -12,6 +12,8 @@ end
 
 puts "Seeding pet posts..."
 
+# hard code 5-10 unique PetPosts
+
 10.times do
     user = User.all.sample
     likes = rand(1..1000)
@@ -30,7 +32,7 @@ end
 
 puts "Seeding comments..."
 
-10.times do
+25.times do
         user = User.all.sample
         pet_post = PetPost.all.sample
         content = 'I wanna squish those cheeks!'
@@ -47,6 +49,3 @@ puts "Seeding comments..."
     
 
     puts "Seeded!"
-
-
-    # add breed, name to petpost in seed, rollback schema, migrate new schema, hardcode 5 petposts with pics

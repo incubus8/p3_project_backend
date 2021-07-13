@@ -14,14 +14,29 @@ class ApplicationController < Sinatra::Base
     200
   end
 
-  get '/' do
+  get '/pet_posts' do
     # pet_posts = PetPost.all
     # {message: PetPost.all}.to_json
       PetPost.all.to_json
+      # (:include =>:comments)
     # {message: "hello world"}.to_json
+  end
+
+  get '/pet_posts/:id/comments' do
+    post = PetPost.find(params[:id])
+    post.comments.to_json
   end
   # method "URL" do
     
-  # end
+  patch '/pet_posts/:id' do
+    post = PetPost.find(params[:id])
+    post.likes = params[:likes]
+    post.save
+    post.to_json
+  end
 
+  post '/pet_posts' do
+    post = PetPost.create
+    post.to_json
+  end
 end
