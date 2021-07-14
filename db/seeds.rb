@@ -13,22 +13,49 @@ end
 puts "Seeding pet posts..."
 
 # hard code 5-10 unique PetPosts
-
-10.times do
     user = User.all.sample
     likes = rand(1..1000)
-    breed = Faker::Creature::Dog.breed
-    name = Faker::Creature::Dog.name
-    description = Faker::Creature::Dog.unique.meme_phrase
     
     PetPost.create(user_id: user.id,
-                    description: description,
-                    img_url: "http://cdn.akc.org/content/article-body-image/keeshond_dog_pictures.jpg",
+                    description: "So much floof!",
+                    img_url: "https://i2-prod.mirror.co.uk/incoming/article22568810.ece/ALTERNATES/s1200b/0_Adorable-dog-leaves-people-baffled-as-its-face-looks-so-human-it-doesnt-seem-real.jpg",
                     likes: likes,
-                    breed: breed,
-                    name: name
+                    breed: "toy poodle",
+                    name: "Kokoro"
                     )
-end
+
+    PetPost.create(user_id: user.id,
+                    description: "Sorry, I'm not gluten free...",
+                    img_url: "https://static.boredpanda.com/blog/wp-content/uploads/2020/06/funny-animals-stuck-in-bread-8-5ee76818ecb57__700.jpg",
+                    likes: likes,
+                    breed: "Pomeranian",
+                    name: "Baguette"
+                    )
+
+    PetPost.create(user_id: user.id,
+                    description: "I go sploot after a long day!",
+                    img_url: "http://www.luvbat.com/uploads/funny_corgi_puppy_napping__5429175095.jpg",
+                    likes: likes,
+                    breed: "Corgi",
+                    name: "Meatball"
+                    )
+
+    PetPost.create(user_id: user.id,
+                    description: "I'm not a player, I just sag a lot!",
+                    img_url: "https://static.boredpanda.com/blog/wp-content/uploads/2015/04/bulldog-puppy-17__605.jpg",
+                    likes: likes,
+                    breed: "English Bulldog",
+                    name: "Sir Sags-A-Lot"
+                    )
+
+    PetPost.create(user_id: user.id,
+                    description: "How do you like my smile?",
+                    img_url: "https://justsomething.co/wp-content/uploads/2017/12/this-is-ryujii-the-handsome-and-ridiculously-cute-shiba-from-japan-01-12.jpg",
+                    likes: likes,
+                    breed: "Shiba Inu",
+                    name: "Ryujii"
+                    )
+
 
 puts "Seeding comments..."
 
@@ -40,9 +67,6 @@ puts "Seeding comments..."
         Comment.create(content: content,
                         user_id: user.id,
                         pet_post_id: pet_post.id,
-                        
-    
-                        
         )
     end
 

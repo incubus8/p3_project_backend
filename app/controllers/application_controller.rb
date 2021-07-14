@@ -36,7 +36,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/pet_posts' do
-    post = PetPost.create
+    post = PetPost.create.all
     post.to_json
   end
 end
