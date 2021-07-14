@@ -72,3 +72,5 @@ puts "Seeding comments..."
     
 
     puts "Seeded!"
+
+    # hard code unique comments for pet posts
