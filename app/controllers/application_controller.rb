@@ -25,12 +25,6 @@ class ApplicationController < Sinatra::Base
     # comment.to_json
   end
 
-  # post '/pet_posts/:post_id/comments' do
-  #   binding.pry
-  #   comment = Comment.create(params)
-  #   comment.to_json
-  # end
-
   post '/pet_posts/comments' do
     comment = Comment.create(params)
     comment.to_json
@@ -56,6 +50,7 @@ class ApplicationController < Sinatra::Base
   delete '/pet_posts/:id' do
     post = PetPost.find(params[:id])
     post.destroy
+    {}.to_json
   end
 
 end
