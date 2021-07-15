@@ -15,7 +15,7 @@ puts "Seeding pet posts..."
     id = User.ids.sample
 # hard code 5-10 unique PetPosts
     
-    PetPost.create(user_id: id,
+    PetPost.create(user_id: 1,
                     description: "So much floof!",
                     img_url: "https://i2-prod.mirror.co.uk/incoming/article22568810.ece/ALTERNATES/s1200b/0_Adorable-dog-leaves-people-baffled-as-its-face-looks-so-human-it-doesnt-seem-real.jpg",
                     likes: rand(1..1000),
@@ -58,19 +58,53 @@ puts "Seeding pet posts..."
 
 puts "Seeding comments..."
 
-10.times do
         user = User.all.sample
         pet_post = PetPost.all.sample
-        content = 'I wanna squish those cheeks!'
             
-        Comment.create(content: content,
-                        user_id: user.id,
-                        pet_post_id: pet_post.id,
+        Comment.create(content: "Such a cute ball of fur!",
+                        user_id: User.all.sample.id,
+                        pet_post_id: 1,
         )
-    end
 
-    
+        Comment.create(content: "Kokoro is so adorable!!",
+                        user_id: User.all.sample.id,
+                        pet_post_id: 1,
+        )
+
+        Comment.create(content: "Baguette looks like she's inbread",
+                        user_id: User.all.sample.id,
+                        pet_post_id: 2,
+        )
+
+        Comment.create(content: "Looks like Meatball had a long day!",
+                        user_id: User.all.sample.id,
+                        pet_post_id: 3,
+        )
+
+        Comment.create(content: "Such cute wrinkles!!",
+                        user_id: User.all.sample.id,
+                        pet_post_id: 4,
+        )
+
+        Comment.create(content: "Haha, what a cute name!",
+                        user_id: User.all.sample.id,
+                        pet_post_id: 4,
+        )
+
+        Comment.create(content: "I wish I could squish those cheeks!!",
+                        user_id: User.all.sample.id,
+                        pet_post_id: 5,
+        )
+
+        Comment.create(content: "Ryujii has the cutest smile.",
+                        user_id: User.all.sample.id,
+                        pet_post_id: 5,
+        )
+
+        Comment.create(content: "Omg she's so adorable with her tongue out like that",
+                        user_id: User.all.sample.id,
+                        pet_post_id: 1,
+        )
+ 
 
     puts "Seeded!"
-
-    # hard code unique comments for pet posts
