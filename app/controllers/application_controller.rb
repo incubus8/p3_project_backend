@@ -19,15 +19,15 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/pet_posts/:id/comments' do
-    # comment = Comment.create(params)
     post = PetPost.find(params[:id])
-    post.comments.to_json
-    # comment.to_json
+    post.comments_with_user.to_json
+    # post.comments.to_json
   end
 
   post '/pet_posts/comments' do
     comment = Comment.create(params)
-    comment.to_json
+    comment.w_user.to_json
+    # comment.to_json
   end
     
   patch '/pet_posts/:id' do
